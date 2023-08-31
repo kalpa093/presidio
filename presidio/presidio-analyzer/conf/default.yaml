@@ -3,3 +3,6 @@ models:
   -
     lang_code: en
     model_name: en_core_web_lg
+    -
+    lang_code: ko
+    model_name: ko_core_news_lg

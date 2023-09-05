@@ -21,7 +21,7 @@ class IpRecognizer(PatternRecognizer):
         ),
     ]
 
-    CONTEXT = ["RNN, "Resident Registration Number", "주민등록번호"]
+    CONTEXT = ["RNN", "Resident Registration Number", "주민등록번호"]
 
     def __init__(
         self,

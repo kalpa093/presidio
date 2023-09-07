@@ -19,4 +19,4 @@ message = response['choices'][0]['message']['content']
 print(message)
 
 with open("output.txt", "w") as file:
-    file.write(model_response)
+    file.write(message)

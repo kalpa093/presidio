@@ -11,6 +11,10 @@ import yaml
 from presidio_analyzer import EntityRecognizer, PatternRecognizer
 from presidio_analyzer.nlp_engine import NlpEngine, SpacyNlpEngine, StanzaNlpEngine
 from presidio_analyzer.predefined_recognizers import (
+    KRMedInsRecognizer,
+    KRCreditCardRecognizer,
+    KRPhoneRecognizer,
+    RRNRecognizer,
     CreditCardRecognizer,
     CryptoRecognizer,
     DateRecognizer,
@@ -40,7 +44,6 @@ from presidio_analyzer.predefined_recognizers import (
     TransformersRecognizer,
     ItPassportRecognizer,
     ItIdentityCardRecognizer,
-    InPanRecognizer,
 )
 
 logger = logging.getLogger("presidio-analyzer")
@@ -88,7 +91,6 @@ class RecognizerRegistry:
                 AuAcnRecognizer,
                 AuTfnRecognizer,
                 AuMedicareRecognizer,
-                InPanRecognizer,
             ],
             "es": [EsNifRecognizer],
             "it": [
@@ -110,6 +112,12 @@ class RecognizerRegistry:
                 PhoneRecognizer,
                 UrlRecognizer,
             ],
+            "ko": [
+                RRNRecognizer,
+                KRPhoneRecognizer,
+                KRCreditCardRecognizer,
+                KRMedInsRecognizer,
+            ],
         }
         for lang in languages:
             lang_recognizers = [rc() for rc in recognizers_map.get(lang, [])]
@@ -125,7 +133,7 @@ class RecognizerRegistry:
     ) -> Union[Type[SpacyRecognizer], Type[StanzaRecognizer]]:
         """Return the recognizer leveraging the selected NLP Engine."""
 
-        if not nlp_engine or type(nlp_engine) is SpacyNlpEngine:
+        if not nlp_engine or type(nlp_engine) == SpacyNlpEngine:
             return SpacyRecognizer
         if isinstance(nlp_engine, StanzaNlpEngine):
             return StanzaRecognizer

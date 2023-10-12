@@ -36,6 +36,8 @@ from .kr_rrn_recognizer import RRNRecognizer
 from .kr_phone_recognizer import KRPhoneRecognizer
 from .kr_creditcard_recognizer import KRCreditCardRecognizer
 from .kr_medins_recognizer import KRMedInsRecognizer
+from .kr_driverlisence_recognizer import KRDriverLicenseRecognizer
+from .kr_passport_recognizer import KRPassportRecognizer
 
 NLP_RECOGNIZERS = {
     "spacy": SpacyRecognizer,
@@ -79,4 +81,6 @@ __all__ = [
     "KRPhoneRecognizer",
     "KRCreditCardRecognizer",
     "KRMedInsRecognizer",
+    "KRDriverLicenseRecognizer",
+    "KRPassportRecognizer"
 ]

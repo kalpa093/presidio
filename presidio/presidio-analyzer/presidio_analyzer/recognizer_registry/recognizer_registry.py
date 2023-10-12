@@ -11,6 +11,8 @@ import yaml
 from presidio_analyzer import EntityRecognizer, PatternRecognizer
 from presidio_analyzer.nlp_engine import NlpEngine, SpacyNlpEngine, StanzaNlpEngine
 from presidio_analyzer.predefined_recognizers import (
+    KRPassportRecognizer,
+    KRDriverLicenseRecognizer,
     KRMedInsRecognizer,
     KRCreditCardRecognizer,
     KRPhoneRecognizer,
@@ -117,6 +119,8 @@ class RecognizerRegistry:
                 KRPhoneRecognizer,
                 KRCreditCardRecognizer,
                 KRMedInsRecognizer,
+                KRDriverLicenseRecognizer,
+                KRPassportRecognizer,
             ],
         }
         for lang in languages:

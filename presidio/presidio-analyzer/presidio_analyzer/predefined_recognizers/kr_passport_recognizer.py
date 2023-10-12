@@ -3,17 +3,17 @@ from typing import Optional, List
 from presidio_analyzer import Pattern, PatternRecognizer
 
 
-class KRCreditCardRecognizer(PatternRecognizer):
+class KRPassportRecognizer(PatternRecognizer):
 
     PATTERNS = [
         Pattern(
-            "Credit Card",
-            r"([234569][0-9]{3}[- ]?[0-9]{4}[- ]?[0-9]{4}[- ]?[0-9]{4})",
+            "Passport",
+            r"[a-zA-Z]{1}[0-9a-zA-Z]{1}[0-9]{7}",
             0.1,
         ),
     ]
     CONTEXT = [
-        "신용카드번호",
+        "여권번호",
     ]
 
     def __init__(
@@ -21,7 +21,7 @@ class KRCreditCardRecognizer(PatternRecognizer):
         patterns: Optional[List[Pattern]] = None,
         context: Optional[List[str]] = None,
         supported_language: str = "ko",
-        supported_entity: str = "신용카드번호",
+        supported_entity: str = "여권번호",
     ):
         patterns = patterns if patterns else self.PATTERNS
         context = context if context else self.CONTEXT

@@ -1,0 +1,60 @@
+처리일련번호/SEQ NO.
+카드종류/CARD TYPE
+유효기간/EXPIRY
+거래일자/TRANS DATE
+품명/DESCRIPTION
+거래유형/TRANS TYPE
+통신판매업자 상호/
+SHOP NAME
+대표자/MASTER
+사업자등록번호/
+SHOP NO.
+판매자 전화번호/
+SELLER PHONE NO.
+판매자 사업장주소!
+SELLER ADDRESS
+20221108557375807 2022110854
+2022-11-08
+신용카드매출전표
+SALES SLIP(CREDIT CARD)
+[기프티콘] [라특가] 메가박스 1인권
+일반
+십일번가 주식회사
+하형일
+815-81-01244
+02-1600-3194
+봉사료
+TIPS
+주문번호/ORDER NO.
+합계
+TOTAL
+카드번호/CARD NO.
+거래종류/TRANS CLASS
+AMOUNT W
+세금
+TAXES
+할부/INSTALLMENT
+W
+₩
+₩
+억
+승인번호
+APPROVAL NO.
+서울특별시 중구 한강대로 416 (남대문로5가,서울스퀘어)
+백
+26120487
+20221108557375
+******1638
+신용승인
+일시불
+천
+7
+7
+원
+9 0 0
+면세상품
+9
+o
+2
+。
+0처리일련번호/SEQNO.카드종류/CARDTYPE유효기간/EXPIRY거래일자/TRANSDATE품명/DESCRIPTION거래유형/TRANSTYPE통신판매업자상호/SHOPNAME대표자/MASTER사업자등록번호/SHOPNO.판매자전화번호/SELLERPHONENO.판매자사업장주소!SELLERADDRESS2022110855737580720221108542022-11-08신용카드매출전표SALESSLIP(CREDITCARD)[기프티콘][라특가]메가박스1인권일반십일번가주식회사하형일815-81-0124402-1600-3194봉사료TIPS주문번호/ORDERNO.합계TOTAL카드번호/CARDNO.거래종류/TRANSCLASSAMOUNTW세금TAXES할부/INSTALLMENTW₩₩억승인번호APPROVALNO.서울특별시중구한강대로416(남대문로5가,서울스퀘어)백2612048720221108557375******1638신용승인일시불천77원900면세상품9o2。0

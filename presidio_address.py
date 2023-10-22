@@ -20,39 +20,65 @@ anonymizer = AnonymizerEngine()
 
 label = []
 data = []
-with open('fake_addresses_label.csv', 'r', encoding='cp949', errors='ignore') as f:
+with open('address.csv', 'r', encoding='cp949', errors='ignore') as f:
     reader = csv.reader(f)
     next(reader)
     for row in reader:
         data.append(row[0])
-        label.append(row[3])
+        label.append(row[1])
 
 count = 0
 tp = 0
 fp = 0
 fn = 0
 tn = 0
+true_data = []
+true_label = []
+false_data = []
+false_label = []
+
 for i in range(len(data)):
-    results = analyzer.analyze(text=data[i], language="ko")
-    print(data[i])
+    if label[i] == "TRUE":
+        true_data.append(data[i])
+        true_label.append("TRUE")
+    elif label[i] == "FALSE":
+        false_data.append(data[i])
+        false_label.append("FALSE")
+
+for i in range(len(true_data)):
+    results = analyzer.analyze(text=true_data[i], language="ko")
+    print(true_data[i])
+    print(results)
     for result in results:
-        print(result)
         if result.entity_type == "주소":
             count = count + 1
-            if label[i] == "true": #진짜 데이터를 TRUE라고 한것.
+            if true_label[i] == "TRUE":
                 tp = tp + 1
-            else:                   #가짜 데이터를 TRUE라고 한것.
-                tn = tn + 1
+            else:
+                fp = fp + 1
     if len(results) < 1:
-        if label[i] == "true": #진짜 데이터를 FALSE라고 한것.
-            fp = fp + 1
-        else:                   #가짜 데이터를 FALSE라고 한것.
+        if true_label[i] == "TRUE":
             fn = fn + 1
+        else:
+            tn = tn + 1
 
-print(tp/(tp+fp+0.01))
-print(tp/(tp+fn+0.01))
 
+for i in range(len(false_data)):
+    results = analyzer.analyze(text=false_data[i], language="ko")
+    print(false_data[i])
+    print(results)
+    for result in results:
+        if result.entity_type == "주소":
+            count = count + 1
+            if false_label[i] == "TRUE":
+                tp = tp + 1
+            else:
+                fp = fp + 1
+    if len(results) < 1:
+        if false_label[i] == "TRUE":
+            fn = fn + 1
+        else:
+            tn = tn + 1
 
-#Precision = 0.6335667833916958
-#Recall = 0.9052086125256857
-#Accuracy = 0.93079
+print(tp)
+print(tn)
